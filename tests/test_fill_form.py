@@ -52,6 +52,6 @@ def test_fill_form(browser_driver):
     browser.element(f"//table//td[text() = 'Date of Birth']/following-sibling::td").should(have.text(f"{day} {month},{year}"))
     browser.element(f"//table//td[text() = 'Subjects']/following-sibling::td").should(have.text(subject))
     browser.element(f"//table//td[text() = 'Hobbies']/following-sibling::td").should(have.text(hobby))
-    browser.element(f"//table//td[text() = 'Picture']/following-sibling::td").should(have.text(file.split("/")[-1]))
+    browser.element(f"//table//td[text() = 'Picture']/following-sibling::td").should(have.text(file.split(os.path.sep)[-1]))
     browser.element(f"//table//td[text() = 'Address']/following-sibling::td").should(have.text(address))
     browser.element(f"//table//td[text() = 'State and City']/following-sibling::td").should(have.text(f"{state} {city}"))
